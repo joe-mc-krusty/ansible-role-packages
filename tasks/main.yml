@@ -1,2 +1,7 @@
 ---
-# tasks file for ansible-role-packages
+- name: install packages
+  packages:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(packages_state_default) }}"
+    use: "{{ item.use | default(packages_use_default) }}"
+  loop: "{{ packages }}"
