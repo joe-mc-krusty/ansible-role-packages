@@ -1,6 +1,6 @@
 ---
 - name: install packages
-  packages:
+  package:
     name: "{{ item.name }}"
     state: "{{ item.state | default(packages_state_default) }}"
     use: "{{ item.use | default(packages_use_default) }}"
